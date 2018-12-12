@@ -1,0 +1,38 @@
+---
+layout: splash
+permalink: /
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/stars.jpg
+  overlay_filter: 0.5
+  actions:
+    - label: "More Info"
+      url: "/about/"
+excerpt: >
+  A distributed data server for big astronomical data.<br />
+  <small><a href="https://github.com/lauryeh/Astroide">Download</a></small>
+feature_row:
+  - image_path: /assets/images/sql.png
+    #alt: "ADQL and DataFrame"
+    title: "ADQL and DataFrame"
+    excerpt: "ASTROIDE supports the data access using the most common astronomical query language ADQL and DataFrame."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"
+  - image_path: /assets/images/healpix.png
+    #alt: "HEALPix Partitioning"
+    title: "HEALPix Partitioning"
+    excerpt: "ASTROIDE combines data partitioning with HEALPix indexing technique."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"
+  - image_path: /assets/images/query.png
+    #alt: "Query Optimization"
+    title: "Query Optimization"
+    excerpt: "ASTROIDE extends the Spark optimizer and exploits partition pruning for astronomical operators."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"      
+---
+
+{% include feature_row %}

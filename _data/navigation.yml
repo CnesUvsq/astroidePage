@@ -1,0 +1,12 @@
+# main links
+main:
+  - title: "Quick-Start Guide"
+    url: /guide/
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
+  - title: "Publications"
+    url: /publications/
+  # - title: "Sitemap"
+  #   url: /sitemap/
