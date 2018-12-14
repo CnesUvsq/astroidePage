@@ -4,11 +4,14 @@ title: About
 permalink: /about/
 ---
 
+![astroideLogo]({{ "astroideLogo.png" | absolute_url }})
+
 ASTROIDE is a distributed data server
 tailored for the management of large volume of astronomical data
 and concentrates on query processing and optimization. ASTROIDE
 stands for ASTROnomical In-memory Distributed Engine. It is designed as an extension of Apache Spark, and takes into account
 the peculiarities of the data and the queries related to astronomical surveys and catalogs.
+
 
 ASTROIDE includes the following extensions over
 Spark:

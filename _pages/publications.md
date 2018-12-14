@@ -7,7 +7,7 @@ permalink: /publications/
 * M. BRAHEM, K. Zeitouni, and L. Yeh. ASTROIDE: A unified astronomical big data processing
 engine over spark. IEEE Transactions on Big Data, 2018 [(Link)](http://perso.prism.uvsq.fr/users/zeitouni/papers/TBD2018_Preprint.pdf)
 
-* M. BRAHEM, K. Zeitouni, and L. Yeh. Efficient astronomical query processing using spark. In
+* M. BRAHEM, L. Yeh and K. Zeitouni. Efficient astronomical query processing using spark. In
 In 26th ACM SIGSPATIAL International Conference on Advances in Geographic Information
 Systems, SIGSPATIAL, 2018 [(Link)](http://perso.prism.uvsq.fr/users/zeitouni/papers/SIGSPATIAL2018_Preprint.pdf)
 

@@ -3,19 +3,21 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/stars.jpg
-  overlay_filter: 0.5
+  overlay_image: /assets/images/gaia.jpg
+  caption: "[**© CNES/ill.David DUCROS, 2013**](https://cnes.fr/)"
   actions:
     - label: "More Info"
       url: "/about/"
 excerpt: >
   A distributed data server for big astronomical data.<br />
   <small><a href="https://github.com/CnesUvsqAstroide/ASTROIDE">Download</a></small>
+intro: 
+  - excerpt: 'ASTROIDE achieves scalability and efficiency by combining the benefits of distributed processing using Spark with the relevance of an astronomical query optimizer.'
 feature_row:
-  - image_path: /assets/images/sql.png
+  - image_path: /assets/images/adql.jpg
     #alt: "ADQL and DataFrame"
     title: "ADQL and DataFrame"
-    excerpt: "ASTROIDE supports the data access using DataFrame and the most common astronomical query language (ADQL) ."
+    excerpt: "ASTROIDE supports the data access using DataFrame and the most common astronomical query language ADQL."
     url: "/about/"
     btn_class: "btn--primary"
     #btn_label: "Learn more"
@@ -35,4 +37,5 @@ feature_row:
     #btn_label: "Learn more"      
 ---
 
+{% include feature_row id="intro" type="center" %}
 {% include feature_row %}

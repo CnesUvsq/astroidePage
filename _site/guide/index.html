@@ -110,7 +110,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="http://localhost:4000/"><img src="astroide.png"></a>
+        <a class="site-title" style="max-width:110px;" href="http://localhost:4000/"><img src="astroideLogo.png"></a>
         <ul class="visible-links"><li class="masthead__menu-item">
               <a href="/guide/" >Quick-Start Guide</a>
             </li><li class="masthead__menu-item">
@@ -148,7 +148,7 @@
 
 <p>ASTROIDE supports reading ONLY input format csv or compressed csv.</p>
 
-<p>You can download example of astronomical data <a href="https://github.com/MBrahem/ASTROIDE/tree/master/ExampleData">here</a> or all GAIA DR1 <a href="http://cdn.gea.esac.esa.int/Gaia/gdr1/gaia_source/csv/">here</a> and put downloaded files in HDFS.</p>
+<p>You can download example of astronomical data <a href="https://github.com/CnesUvsqAstroide/ASTROIDE/tree/master/ExampleData">here</a> or all GAIA DR1 <a href="http://cdn.gea.esac.esa.int/Gaia/gdr1/gaia_source/csv/">here</a> and put downloaded files on HDFS.</p>
 
 <p>Example:</p>
 
@@ -157,11 +157,11 @@ $ hdfs dfs -mkdir data
 $ hdfs dfs -put * data/
 </code></pre></div></div>
 
-<p>ASTROIDE allows users to use data whose coordinates are expressed according to the International Celestial Reference System <a href="https://hpiers.obspm.fr/icrs-pc/icrs/icrs.html">ICRS</a>. Other coordinate systems will be supported in future versions.</p>
+<p>ASTROIDE allows to use data whose coordinates are expressed according to the International Celestial Reference System <a href="https://hpiers.obspm.fr/icrs-pc/icrs/icrs.html">ICRS</a>. Other coordinate systems will be supported in future versions.</p>
 
 <h2 id="partitioning">Partitioning</h2>
 
-<p>Partitioning is a fundamental component for parallel data processing. It reduces computer resources when only a sub-part of relevant data are involved in a query, and distributes tasks evenly when the query concerns a large number of partitions. This hence globally improves the query performances.</p>
+<p>Partitioning is a fundamental component for parallel data processing. It reduces computer resources when only a sub-part of relevant data are involved in a query, and distributes tasks evenly when the query concerns a large number of partitions. This hence globally improves query performances.</p>
 
 <p>Partitioning is a mandatory  process for executing astronomical queries efficiently in ASTROIDE.</p>
 
@@ -219,11 +219,10 @@ $ spark-submit --class fr.uvsq.adam.astroide.executor.BuildHealpixPartitioner  $
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ spark-submit --class fr.uvsq.adam.astroide.executor.BuildHealpixPartitioner $ASTROIDE_HOME/ProjectJar/astroide.jar -fs hdfs://localhost:8020  $ASTROIDE_HOME/ExampleData/tycho2Schema.txt data/tycho2.gz "|" partitioned/tycho2.parquet 32 12 ra dec $ASTROIDE_HOME/tycho2.txt
 </code></pre></div></div>
 
-<p>ASTROIDE retrieves partition boundaries and stores them as metadata. Note that in our case, all we need to store are the three values (n, l, u) where n is the partition number, l is
-the first HEALPix cell of the partition number n and u is the last HEALPix cell of the partition number n. It should also be noted that we store the partitioned files, along with the
-metadata, on HDFS and use them for future queries.</p>
+<p>ASTROIDE retrieves partition boundaries and stores them as metadata. Note that in our case, all we need to store are the three values (<em>n</em>, <em>l</em>,<em>u</em>) where <em>n</em> is the partition number, <em>l</em> is
+the first HEALPix cell of the partition number <em>n</em> and <em>u</em> is the last HEALPix cell of the partition number <em>n</em>. It should also be noted that we store the partitioned files, along with the metadata, on HDFS and use them for future queries.</p>
 
-<p>Below is an example of small file with 5 partitions:</p>
+<p>Below is an example of a small file with 5 partitions:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat $ASTROIDE_HOME/gaia.txt
 
@@ -233,7 +232,7 @@ metadata, on HDFS and use them for future queries.</p>
 [2,178807,268308]
 </code></pre></div></div>
 
-<p>The partitioned file will be stored as a parquet file that looks like:</p>
+<p>The partitioned file is stored as a parquet file that looks like:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ hdfs dfs -ls partitioned/gaia.parquet/
 
@@ -251,7 +250,7 @@ drwxr-xr-x   - user supergroup          0 2018-06-22 11:32 partitioned/gaia.parq
 
 <ul>
   <li>
-    <p>Cone Search is one of the most frequent queries in the astronomical domain. It returns a set of stars whose positions lie within a circular region of the sky.</p>
+    <p>Cone Search is one of the most frequent queries in the astronomical domain. It returns the set of stars whose positions lie within a circular region of the sky.</p>
   </li>
   <li>
     <p>Cross-Matching query aims at identifying and comparing astronomical objects belonging to different observations of the same sky region.</p>
@@ -267,13 +266,13 @@ drwxr-xr-x   - user supergroup          0 2018-06-22 11:32 partitioned/gaia.parq
 
 <p>After data partitioning, you can start executing astronomical queries using ADQL.</p>
 
-<p>ASTROIDE supports ADQL Standard. It includes three kinds of astronomical operators as follows. All these operators can be directly passed to astroide throught <em>queryFile</em></p>
+<p>ASTROIDE supports ADQL Standard. It includes three kinds of astronomical operators as follows. All these operators can be directly passed to ASTROIDE throught <em>queryFile</em></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ spark-submit --class fr.uvsq.adam.astroide.executor.AstroideQueries [--master &lt;master-url&gt;] &lt;astroide.jar&gt; -fs &lt;hdfs&gt; &lt;file1&gt; &lt;file2&gt; &lt;healpixOrder&gt; &lt;queryFile&gt; &lt;action&gt; [&lt;outfile&gt;]
 </code></pre></div></div>
 
 <blockquote>
-  <p>For KNN &amp; ConeSearch queries</p>
+  <p>For kNN &amp; ConeSearch queries</p>
 </blockquote>
 
 <ul>
@@ -337,7 +336,7 @@ drwxr-xr-x   - user supergroup          0 2018-06-22 11:32 partitioned/gaia.parq
 
 <h2 id="queries-examples">Queries Examples</h2>
 
-<p>These are some correct ADQL queries that you can refer to test in ASTROIDE.</p>
+<p>These are some correct ADQL queries that you can refer to execute queries in ASTROIDE.</p>
 
 <p>You can save only one query in a text file and run your application using <code class="highlighter-rouge">fr.uvsq.adam.astroide.executor.AstroideQueries</code>.</p>
 
@@ -352,7 +351,7 @@ SELECT source_id,ra FROM table WHERE (1=CONTAINS(point('icrs',ra,dec),circle('ic
 SELECT ra,dec,ipix FROM (SELECT * FROM table WHERE 1=CONTAINS(point('icrs',ra,dec),circle('icrs', 44.97845893652677, 0.09258081167082206, 0.05))) As t;
 </code></pre></div></div>
 
-<h3 id="knn-queries">KNN Queries</h3>
+<h3 id="knn-queries">kNN Queries</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT TOP 10 *, DISTANCE(Point('ICRS', ra, dec), Point('ICRS', 44.97845893652677, 0.09258081167082206)) AS dist FROM table ORDER BY dist;
     
@@ -369,7 +368,7 @@ SELECT * FROM (SELECT table.source_id, table.ipix, table2.ipix FROM table JOIN t
 </code></pre></div></div>
 
 <p>Please consider that ASTROIDE translates these three types of queries into internal representation. ASTROIDE does not translate all features of ADQL language. 
-For example, the second KNN query is translated into an equivalent query as follows:</p>
+For example, the second kNN query is translated into an equivalent query as follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>== Translated Query ==
 SELECT t.ra , t.dec , t.dist
@@ -402,12 +401,12 @@ TakeOrderedAndProject(limit=10, orderBy=[dist#120 ASC NULLS FIRST], output=[ra#4
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spark-submit --class fr.uvsq.adam.astroide.executor.RunCrossMatch &lt;application-jar&gt; &lt;file1&gt; &lt;file2&gt; &lt;radius&gt; &lt;healpixOrder&gt;
 </code></pre></div></div>
 
-<p>Cross matching imports this package</p>
+<p>Cross matching needs to import this package</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import fr.uvsq.adam.astroide.queries.optimized.CrossMatch._
 </code></pre></div></div>
 
-<p>Given a dataFrame representing the first dataset, this class execute a crossmatch using a precised radius by doing the following:</p>
+<p>Given a dataFrame representing the first dataset, this class executes a crossmatch using a precised radius as follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>val output = df1.ExecuteXMatch(session, df2, radius)
 </code></pre></div></div>
