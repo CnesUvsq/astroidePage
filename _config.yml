@@ -21,7 +21,11 @@ title                    : "ASTROIDE"
 title_separator          : "-"
 name                     : "ASTROIDE"
 description              : "ASTROIDE is a distributed data server for astronomical data."
+<<<<<<< HEAD
 url                      : https://cnesuvsqastroide.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+=======
+url                      : https://github.com/CnesUvsqAstroide/ASTROIDE # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : /assets/images/stars.png # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -80,8 +84,13 @@ yandex_site_verification :
 naver_site_verification  :
 
 # Social Sharing
+<<<<<<< HEAD
 twitter:
   username               :
+=======
+github:
+  username               : MariemBrahem
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
 facebook:
   username               :
   app_id                 :
@@ -109,6 +118,10 @@ author:
   #bio              : "I am an amazing person."
   #location         : "Somewhere"
   email            : "mariem-brahem@hotmail.com"
+<<<<<<< HEAD
+=======
+  github           : "MariemBrahem"
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
   #links:
     #- label: "Email"
      # icon: "fas fa-fw fa-envelope-square"
@@ -122,9 +135,15 @@ author:
     #- label: "Facebook"
      # icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
+<<<<<<< HEAD
  #   - label: "GitHub"
   #    icon: "fab fa-fw fa-github"
    #   url: "https://github.com/MBrahem"
+=======
+  #- label: "GitHub"
+   # icon: "fab fa-fw fa-github"
+   # url: "https://github.com/CnesUvsqAstroide/ASTROIDE"
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
     #- label: "Instagram"
      # icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -138,11 +157,19 @@ footer:
     #- label: "Facebook"
     #  icon: "fab fa-fw fa-facebook-square"
       # url:
+<<<<<<< HEAD
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
+=======
+    #- label: "GitHub"
+     #  icon: "fab fa-fw fa-github"
+      # url: https://github.com/CnesUvsqAstroide/ASTROIDE
+    #- label: "GitLab"
+    #  icon: "fab fa-fw fa-gitlab"
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
       # url:
     #- label: "Bitbucket"
      # icon: "fab fa-fw fa-bitbucket"
@@ -288,4 +315,7 @@ defaults:
       sidebar:
       nav: "main"
       layout: single
+<<<<<<< HEAD
 
+=======
+>>>>>>> 344966aea87e0a2b53a4530d27122664dfafdc10
