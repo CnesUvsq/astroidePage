@@ -10,6 +10,9 @@ permalink: /contact/
 * Laurent Yeh ([laurent.yeh@uvsq.fr](mailto:laurent.yeh@uvsq.fr)).
 * Karine Zeitouni ([karine.zeitouni@uvsq.fr](mailto:karine.zeitouni@uvsq.fr)).
 
+## DAVID Lab @ UVSQ - University of Paris-Saclay
+
+ASTROIDE is one of the projects initiated by the DAVID Lab at the University of Versailles Saint-Quentin (UVSQ). The objective of the laboratory is to conduct research activities combining big data and the extraction of quality knowledge, data security and confidentiality. ASTROIDE has been developed in the framework of a PhD thesis which was co-funded by the UVSQ and the CNES.
 
 ## Support
 
