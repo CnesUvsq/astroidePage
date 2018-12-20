@@ -1,0 +1,41 @@
+---
+layout: splash
+permalink: /
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/gaia.jpg
+  caption: "[**© CNES/ill.David DUCROS, 2013**](https://cnes.fr/)"
+  actions:
+    - label: "More Info"
+      url: "/about/"
+excerpt: >
+  A distributed data server for big astronomical data.<br />
+  <a href="https://github.com/CnesUvsqAstroide/ASTROIDE"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png" alt="GitHub link"></a>
+intro: 
+  - excerpt: 'ASTROIDE is an open source software, distributed under GPL V2 Licence. It was initiated by the DAVID Lab and co-funded by the UVSQ and the CNES. ASTROIDE achieves scalability and efficiency by combining the benefits of distributed processing using Spark with the relevance of an astronomical query optimizer.'
+feature_row:
+  - #alt: "ADQL and DataFrame"
+    title: "ADQL and DataFrame"
+    excerpt: "ASTROIDE supports the data access using DataFrame and the most common astronomical query language ADQL."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"
+    image_path: /assets/images/adql.png
+  - image_path: /assets/images/healpix.png
+    #alt: "HEALPix Partitioning"
+    title: "HEALPix Partitioning"
+    excerpt: "ASTROIDE combines data partitioning with HEALPix indexing technique."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"
+  - image_path: /assets/images/query.png
+    #alt: "Query Optimization"
+    title: "Query Optimization"
+    excerpt: "ASTROIDE extends the Spark optimizer and exploits partition pruning for astronomical operators."
+    url: "/about/"
+    btn_class: "btn--primary"
+    #btn_label: "Learn more"      
+---
+
+{% include feature_row id="intro" type="center" %}
+{% include feature_row %}
