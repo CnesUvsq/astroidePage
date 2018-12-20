@@ -6,7 +6,7 @@ permalink: /about/
 
 ![astroideLogo]({{ "astroideLogo.png" | absolute_url }})
 
-ASTROIDE is an open source software, distributed under GPL V2 Licence. It was supported by the University of Versailles Saint-Quentin (UVSQ) and the Centre National dEtudes Spatiales.
+ASTROIDE is an open source software, distributed under GPL V2 Licence. It was supported by the University of Versailles Saint-Quentin (UVSQ) and the Centre National d`Etudes Spatiales.
 
 ASTROIDE is a distributed data server
 tailored for the management of large volume of astronomical data
